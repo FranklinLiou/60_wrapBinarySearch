@@ -17,19 +17,19 @@ This equation can also be written as:
 1. When asked to find a desired integer within two limits, the recursive abstraction will be able to find that desired integer within more narrow limits.
 2. 6 parts of a general recursive solution
 
-0. decision between base case(s) and recursive case(s)
+a. decision between base case(s) and recursive case(s)
 ```
 if( low > hi) // base case 0
 
 if( comparison == 0) // base case 1
 ```
-1. instructions to solve base cases
+b. instructions to solve base cases
 ```
 return -2; // solution to base case 0
 
 return pageToCheck; // solution to base case 1
 ```
-2. instructions to solve recursive cases
+c. instructions to solve recursive cases
 - combination: N/A
 - leftover processing: N/A
 - result of recursive abstraction
