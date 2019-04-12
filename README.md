@@ -15,7 +15,7 @@ This equation can also be written as:
 ## Describe the Recursive Solution
 0. Find the index of a desired integer, `findMe`, within limits `high` and `low`
 1. When asked to find a desired integer within two limits, the recursive abstraction will be able to find that desired integer within more narrow limits.
-2. 
+2. 6 parts of a general recursive solution
 0. decision between base case(s) and recursive case(s)
 ```
 if( low > hi) // base case 0
