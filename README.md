@@ -3,14 +3,14 @@
 ## Recall Inverse Functions and Logarithms
 What is meant by:
 ```
-y = log2x
+count = log2n
 ```
 This equation can also be written as:
 ```
-2^y = x
+2^count = n
 ```
-- In the equation, `y` is the number that `2`, the base, must be raised to to get `x`.
-- The graph looks like a curve in the first quadrant with an asymtote of `x = 0`. The graph also has an x-intercept of `1` and its rate of change decreases the greater `x` is.
+- In the equation, `count` is the number that `2`, the base, must be raised to to get `n`.
+- The graph looks like a curve in the first quadrant with an asymtote of `x = 0`. The graph also has an x-intercept of `1` and its rate of change decreases the greater `n` is.
 
 ## Describe the Recursive Solution
 0. Find the index of a desired integer, `findMe`, within limits `high` and `low`
