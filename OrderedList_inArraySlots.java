@@ -10,6 +10,7 @@ public class OrderedList_inArraySlots
     implements OrderedList {
 
     private java.util.ArrayList<Integer> list_iAS;
+    private int numComparisons;
 
 
     /**
@@ -18,9 +19,10 @@ public class OrderedList_inArraySlots
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
+        numComparisons = 0;
         return indexOf_whileStyle( findMe);
         // return indexOf_recursive(
-            // findMe, 0, list_iAS.size() -1);
+            // findMe, 0, list_iAS.size() -1, 0);
     }
 
 
@@ -35,6 +37,7 @@ public class OrderedList_inArraySlots
             int pageToCheck = (low + hi) / 2;
             int comparison =
               findMe.compareTo( list_iAS.get( pageToCheck));
+            numComparisons ++;
             if( comparison == 0) return pageToCheck;
             else
                 if( comparison < 0)
@@ -55,11 +58,14 @@ public class OrderedList_inArraySlots
     private int indexOf_recursive( Integer findMe
                                  , int low
                                  , int hi // inclusive
+                                 , int stepsParam
                                  ) {
         // System.out.println( "debug low: " + low
                           // + "   hi: " + hi);
-        if( low > hi)  // detect base case
+        if( low > hi)  { // detect base case
+            numComparisons = stepsParam;
             return -2;   // solution to base case
+        }
               // value differs from while-style method, just FYI
         else{
             int pageToCheck = (low + hi) / 2;
@@ -75,13 +81,19 @@ public class OrderedList_inArraySlots
                     // findMe's spot precedes pageToCheck
                     return indexOf_recursive( findMe
                                              , low
-                                             , pageToCheck -1);
+                                             , pageToCheck -1
+                                             , stepsParam++);
                 else
                     // findMe's spot follows pageToCheck
                     return indexOf_recursive( findMe
                                             , pageToCheck +1
-                                            , hi);
+                                            , hi
+                                            , stepsParam++);
         }
+    }
+
+    public int cost() {
+      return numComparisons;
     }
 
 
